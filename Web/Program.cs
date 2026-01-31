@@ -1,9 +1,16 @@
+
+using Infrastructure.Contexts;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
+
+builder.Services.AddDbContext<CmsDbContext>(
+    options => options.UseNpgsql(builder.Configuration.GetConnectionString("Database")));
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())

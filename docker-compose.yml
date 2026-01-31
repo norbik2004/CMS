@@ -1,0 +1,16 @@
+
+services:
+  database:
+    image: postgres:17.6
+    container_name: database
+    ports:
+      - "5435:5432"
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - database_pgdata:/var/lib/postgresql/data
+
+volumes:
+  database_pgdata: { }
