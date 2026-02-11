@@ -12,5 +12,18 @@ services:
     volumes:
       - database_pgdata:/var/lib/postgresql/data
 
+  minio:
+    image: minio/minio:latest
+    container_name: minio-cms
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: miniouser
+      MINIO_ROOT_PASSWORD: miniopassword
+    volumes:
+      - ./minio-data:/data
+    command: server /data --console-address ":9001"
+
 volumes:
   database_pgdata: { }
