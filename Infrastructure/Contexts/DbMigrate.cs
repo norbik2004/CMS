@@ -6,7 +6,7 @@ namespace Infrastructure.Contexts
 {
     public static class DbMigrate
     {
-        public async static void MigrateDb(IServiceProvider serviceProvider)
+        public async static Task MigrateDb(IServiceProvider serviceProvider)
         {
             using var scope = serviceProvider.CreateScope();
             var services = scope.ServiceProvider;

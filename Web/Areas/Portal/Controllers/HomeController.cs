@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Domain.Exceptions;
 
 namespace Web.Areas.Portal.Controllers
 {
