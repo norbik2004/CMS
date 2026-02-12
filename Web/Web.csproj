@@ -14,10 +14,8 @@
     <Folder Include="wwwroot\admin\css\" />
     <Folder Include="wwwroot\admin\js\" />
     <Folder Include="wwwroot\admin\img\" />
-    <Folder Include="wwwroot\portal\css\" />
     <Folder Include="wwwroot\portal\img\" />
     <Folder Include="wwwroot\portal\js\" />
-    <Folder Include="wwwroot\shared\" />
   </ItemGroup>
 
   <ItemGroup>
