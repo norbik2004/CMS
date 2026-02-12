@@ -2,16 +2,16 @@
 
 namespace Application.Commons.Interfaces
 {
-    public interface IFileStorage
+    public interface IMinioFileStorage
     {
         Task<bool> DeleteFileAsync(
             string bucketName,
-            string fileName,
-            CancellationToken ct = default);
+            string fileName);
 
         Task<bool> SaveFilesAsync(
             List<(string ObjectPath, IFormFile File)> files,
-            string bucketName,
-            CancellationToken ct = default);
+            string bucketName);
+
+        Task<MemoryStream> DownloadFileAsync(string bucketName, string fileName);
     }
 }
