@@ -1,7 +1,8 @@
 
 using Infrastructure.Contexts;
 using Infrastructure.Identity;
-using Microsoft.AspNetCore.Diagnostics;
+using Infrastructure.Misc;
+using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,8 +21,10 @@ builder.Services.AddIdentity<AppUser, IdentityRole>(options =>
     options.Password.RequireDigit = true;
     options.Password.RequireUppercase = true;
 })
-.AddEntityFrameworkStores<CmsDbContext>()
-.AddDefaultTokenProviders();
+.AddEntityFrameworkStores<CmsDbContext>().AddDefaultTokenProviders();
+
+builder.Services.AddAutoMapper(typeof(AutoMapperProfile));
+
 
 var app = builder.Build();
 
